@@ -1,0 +1,25 @@
+{
+  "name": "backendNodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "build": "tsc",
+    "dev": "nodemon src/index.ts",
+     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.5.2",
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/node": "^22.13.8",
+    "eslint": "^9.21.0",
+    "globals": "^16.0.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.25.0"
+  }
+}
