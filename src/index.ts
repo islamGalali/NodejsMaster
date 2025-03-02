@@ -1,19 +1,27 @@
- import * as http from 'http';
+//file system 
+import * as  http from 'http';
+import * as fs from 'fs';
+import * as path from 'path';
 
-//  const serverProd = http.createServer((req, res) => {
-//    res.writeHead(200, { 'Content-Type': 'text/plain' });
-//    res.end('Hello World\n');
-//  });
+const txtFile = path.join(__dirname,'data', 'example.txt');
+console.log(txtFile);
+fs.readFile(txtFile, 'utf8', (err, data) => {
+    if (err) {
+      throw new Error('Error reading file');
+    }
+    console.log(data);
+}
+);
 
-
- const serverDev = http.createServer((req : http.IncomingMessage, res : http.ServerResponse) => {
-    res.write('Hello World');
-
+const server = http.createServer((req, res) => {
+    res.write('<h2> Hello World!</h2>');
     res.end();
- });
+});
 
- const PORT = 5000;
- serverDev.listen(5000, 'localhost', () => {
-    console.log(`Server running at http://localhost:${PORT}/`);
-     });
+server.listen(3000, () => {
+    console.log('Server is listening on port 3000');
+});
 
+// console.log(process.cwd());
+// console.log(process.pid);
+// console.log(process.env.NODE_ENV);
